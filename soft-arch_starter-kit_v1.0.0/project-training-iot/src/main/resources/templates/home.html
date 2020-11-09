@@ -1,0 +1,39 @@
+#parse("base.html")
+#@mainLayout()
+<h1>Home</h1>
+
+<a href="/?thing_type=light&action=toggle_on">Toggle all lights ON</a>
+<br/>
+<a href="/?thing_type=light&action=toggle_off">Toggle all lights OFF</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Name</th>
+        <th>State</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    #foreach ($t in $things)
+    <tr>
+        <td>
+            <a href="/things/$velocityCount">
+                $velocityCount
+            </a>
+        </td>
+        <td>$t.getTypeName()</td>
+        <td>$t.getName()</td>
+        <td>$t.getState().name()</td>
+        <td>$t.getDescription()</td>
+    </tr>
+    #end
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+
+#end

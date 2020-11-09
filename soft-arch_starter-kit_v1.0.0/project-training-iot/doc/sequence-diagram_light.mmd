@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant Utilisateur    
+    participant ThingController
+    participant Light
+    participant HomeSystem
+    Utilisateur->>+ThingController: click Toggle Light
+    ThingController->>Light: setLightOn()
+    Light->>Light: update state
+    Light->>HomeSystem: Notifier listener
+    HomeSystem->>HomeSystem: MAJ Logs
+    Light-->>ThingController: MAJ état
+    ThingController-->-Utilisateur: Affiche résultat
+
+ 

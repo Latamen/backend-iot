@@ -1,0 +1,12 @@
+#parse("base.html")
+#@mainLayout()
+<h1>Light</h1>
+
+<a href="/things/$id?action=toggle">
+    #if ($light.isLightOn())
+        Toggle Off
+    #else
+        Toggle On
+    #end
+</a>
+#end
